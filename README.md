@@ -30,4 +30,38 @@ docker run -t my_script_app python script.py --first_name John --last_name Doe
 `docker run -t my_script_app` tells docker to run the container with tag `my_script_app`
 
 `python script.py --first_name John --last_name Doe` tells docker the command that we
-want to execute in the container.
+want to execute within the container.
+
+
+## Running Interactively
+
+To run code interactively you can use the following command to start the docker container
+and then have access to it's terminal.
+
+```bash
+docker run -it -t my_script_app python 
+```
+
+the `-it` flag stands for "interactive". We also changed the command to run within the container to just `python` to 
+open the Python terminal. At this point we can copy and paste code from our file into the terminal to run it, and also
+enter any python commands we want to help test and debug.
+
+
+## Docker Setup
+
+To set up Docker Desktop, you can follow these steps:
+
+Download Docker Desktop for your operating system from the official Docker website: https://www.docker.com/products/docker-desktop.
+
+Install Docker Desktop by running the downloaded installer and following the on-screen instructions.
+
+Once the installation is complete, open Docker Desktop and ensure that it is running properly.
+
+Verify the installation by opening a terminal or command prompt and running the command 
+
+```bash
+docker --version
+```
+You should see the version information for both the Docker client and server.
+
+By following these steps, you will have Docker Desktop set up on your machine, allowing you to build, run, and manage Docker containers. For more detailed instructions, you can refer to the official Docker documentation: https://docs.docker.com/desktop/.
