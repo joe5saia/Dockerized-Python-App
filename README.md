@@ -65,3 +65,17 @@ docker --version
 You should see the version information for both the Docker client and server.
 
 By following these steps, you will have Docker Desktop set up on your machine, allowing you to build, run, and manage Docker containers. For more detailed instructions, you can refer to the official Docker documentation: https://docs.docker.com/desktop/.
+
+
+## Creating requirements.txt file
+
+If you need to create a new requirements.txt file do the following.
+
+1. Create an empty `requirements.txt` file if it does not exist already
+2. Build the container `docker built -t my_script_app .`
+3. Start the container and gain access to it's bash shell `docker run -it -t my_script_app bash`
+4. Run `pip install package1 package2 ...` to install the packages in the container
+5. Run `pip freeze` to print the exact version of every package
+6. Copy the outputs of the `pip freeze` command into the `requirements.txt` file on your local machine
+7. Exit the container by typing `exit` into the container bash shell
+8. Rebuild the container using `docker built -t my_script_app .`
